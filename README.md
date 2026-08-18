@@ -4,13 +4,13 @@
 
 This repository contains the computational workflow for the study:
 
-> **Fault Reactivation Signatures in an Enhanced Geothermal Reservoir: A Multivariate Geomechanical Analysis Applied to Utah FORGE Microseismic Data**
+**Fault Reactivation Signatures in an Enhanced Geothermal Reservoir: A Multivariate Geomechanical Analysis Applied to Utah FORGE Microseismic Data**
 
 The study investigates whether microseismic and geomechanical variables contain independent information associated with operational fault-reactivation events during Enhanced Geothermal System (EGS) stimulation.
 
 The central methodological question is:
 
-> Does a machine-learning model learn an independent physical relationship, or does it simply learn the rules used to construct the target label?
+Does a machine-learning model learn an independent physical relationship, or does it simply learn the rules used to construct the target label?
 
 ---
 
@@ -43,43 +43,10 @@ A classifier using such predictors may achieve apparently strong performance by 
 Therefore, the analysis explicitly audits the candidate features before predictive modeling.
 
 ## Analysis Workflow
-Utah FORGE microseismic catalog
-              │
-              ↓
-        Event labeling
-              │
-              ↓
-      Label construction audit
-              │
-              ↓
-       Feature leakage audit
-              │
-              ↓
-    Leakage-audited feature set
-              │
-              ↓
-       Geometry baseline
-              │
-              ↓
-    Stage-based holdout testing
-              │
-              ↓
- Bootstrap + permutation testing
-              │
-              ↓
-      Geomechanical analysis
-          /           \
-         /             \
-Ambient CFF       Pressure diffusion
-                       │
-                       ↓
-             Stage-specific bulk
-                permeability
-                       │
-                       ↓
-             Final interpretation
 
-Key Results
+Utah FORGE microseismic catalog -> Event labeling -> Label construction audit -> Feature leakage audit -> Leakage-audited feature set -> Geometry baseline -> Stage-based holdout testing -> Bootstrap + permutation testing -> Geomechanical analysis (Ambient CFF + Pressure diffusion) -> Stage-specific bulk permeability -> Final interpretation
+
+## Key Results
 1. Geometry
 After removing circular predictors, geometric variables retained modest discriminatory information.
 
@@ -119,7 +86,8 @@ Importantly, this validates where the structures are, not why individual events 
 The leakage-audited analysis shows:
 
 | Variable group	| Result |
-| Geometry	| Modest discriminatory signal |
+| --------------  | ------ |
+| Geometry | Modest discriminatory signal |
 | Ambient Coulomb stress	| No additional predictive lift |
 | Pressure diffusion	| No additional predictive lift |
 | Focal mechanisms	| Independent support for DFN geometry |
